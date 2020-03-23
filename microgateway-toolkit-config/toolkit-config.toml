@@ -1,0 +1,20 @@
+[client]
+httpRequestTimeout = 1000000
+[token]
+baseURL = "https://wso2apim-km-internal.wso2.svc:9443"
+restVersion = "v0.15"
+publisherEndpoint = "https://wso2apim.wso2.svc:9443/api/am/publisher/{restVersion}"
+adminEndpoint = "https://wso2apim.wso2.svc:9443/api/am/admin/{restVersion}"
+registrationEndpoint = "https://wso2apim.wso2.svc:9443/client-registration/{restVersion}/register"
+tokenEndpoint = "https://wso2apim-km-internal.wso2.svc:9443/oauth2/token"
+username = "admin"
+clientId = "you95eM0kMreYfG05yxpf0QjEsga"
+clientSecret = "5dqodvAK5Q/r8RVNifh4Lu57DwqYaDxgnpKW9bw4o/CHVQLA0wzF9U2fjvYPLSGs"
+trustStoreLocation = "/Library/WSO2/APIMMicroGatewayToolkit/3.0.4/lib/platform/bre/security/ballerinaTruststore.p12"
+trustStorePassword = "R50h6eCtD8obKWGXZQ1ERTnEw4VQzoIVOjojLj+ZaFQ="
+[corsConfiguration]
+accessControlAllowOrigins = ["*"]
+accessControlAllowCredentials = false
+corsConfigurationEnabled = false
+accessControlAllowHeaders = ["authorization", "Access-Control-Allow-Origin", "Content-Type", "SOAPAction"]
+accessControlAllowMethods = ["GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS"]
