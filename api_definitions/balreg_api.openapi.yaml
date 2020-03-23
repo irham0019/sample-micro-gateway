@@ -1,0 +1,102 @@
+openapi: 3.0.1
+info:
+  title: balreg_api
+  version: 1.0.0
+servers:
+- url: //localhost/balreg_api
+paths:
+  /deleteRegEntryById/{id}:
+    delete:
+      operationId: operation1_deleteRegEntryById
+      parameters:
+      - name: req
+        in: path
+        required: true
+        schema: {}
+      - name: id
+        in: path
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: Successful
+          content:
+            application/json:
+              example: Ok
+  /getRegEntry/{key}:
+    get:
+      operationId: operation1_getRegEntry
+      parameters:
+      - name: req
+        in: path
+        required: true
+        schema: {}
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Successful
+          content:
+            application/json:
+              example: Ok
+  /addRegEntry:
+    post:
+      operationId: operation1_addRegEntry
+      parameters:
+      - name: req
+        in: path
+        required: true
+        schema: {}
+      - name: keyData
+        in: path
+        required: true
+        schema: {}
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Request'
+        required: false
+      responses:
+        200:
+          description: Successful
+          content:
+            application/json:
+              example: Ok
+  /getRegEntryById/{id}:
+    get:
+      operationId: operation1_getRegEntryById
+      parameters:
+      - name: req
+        in: path
+        required: true
+        schema: {}
+      - name: id
+        in: path
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: Successful
+          content:
+            application/json:
+              example: Ok
+components:
+  schemas:
+    Request:
+      type: object
+x-wso2-production-endpoints: 
+  urls: 
+    - "http://balregep-svc.wso2.svc:9095/balreg_api"
+  type: "http"
+x-wso2-sandbox-endpoints: 
+  urls: 
+    - "http://balregep-svc.wso2.svc:9095/balreg_api"
+  type: "http"
+x-wso2-basePath: "/balreg_api/1.0.0"
+x-wso2-transports: 
+  - "http"
+  - "https"

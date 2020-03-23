@@ -1,0 +1,138 @@
+[docker]
+  [docker.dockerConfig]
+    enable = false
+    #name = ""
+    #registry = ''
+    #tag = ''
+    #buildImage = ''
+    #dockerHost = ''
+    #dockerCertPath = ''
+    #baseImage = ''
+    #enableDebug = ''
+    #debugPort = ''
+    #push = ''
+    #username = ''
+    #password = ''
+  [docker.dockerCopyFiles]
+    enable = false
+    [[docker.dockerCopyFiles.files]]
+        source = ''
+        target = ''
+        isBallerinaConf = false
+[kubernetes]
+  [kubernetes.kubernetesDeployment]
+    enable = true
+    #name = ''
+    #labels = '{"": ""}'
+    #replicas = ''
+    #enableLiveness = ''
+    #initialDelaySeconds = ''
+    #periodSeconds = ''
+    #livenessPort = ''
+    #imagePullPolicy = ''
+    #image = ''
+    #env = ''
+    #buildImage = ''
+    [kubernetes.kubernetesDeployment.copyFiles]
+        enable = true
+        [[kubernetes.kubernetesDeployment.copyFiles.files]]
+            source = '/Library/WSO2/APIMMicroGateway/3.0.2/runtime/bre/security/ballerinaTruststore.p12'
+            target = '/ballerina/runtime/bre/security/ballerinaTruststore.p12'
+    #dockerHost = ''
+    #dockerCertPath = ''
+    #push = ''
+    #username = ''
+    #password = ''
+    #baseImage = ''
+    #singleYAML = ''
+  [kubernetes.kubernetesService]
+    enable = true
+    #name = ''
+    #labels = '{"": ""}'
+    #serviceType = ''
+    #port = ''
+  #[kubernetes.kubernetesServiceHttps]
+      #enable = false
+      #name = ''
+      #labels = '{"": ""}'
+      #serviceType = ''
+      #port = ''
+  #[kubernetes.kubernetesServiceHttp]
+      #enable = false
+      #name = ''
+      #labels = '{"": ""}'
+      #serviceType = ''
+      #port = ''
+  #[kubernetes.kubernetesServiceToken]
+      #enable = false
+      #name = ''
+      #labels = '{"": ""}'
+      #serviceType = ''
+      #port = ''
+  [kubernetes.kubernetesIngress]
+    enable = false
+    #name = ''
+    #labels = '{"", ""}'
+    #hostname = ''
+    #annotations = ''
+    #path = ''
+    #targetPath = ''
+    #ingressClass = ''
+  [kubernetes.secureKubernetesIngress]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #hostname = ''
+    #annotations = ''
+    #path = ''
+    #targetPath = ''
+    #ingressClass = ''
+    #keyStorePath = '${ballerina.home}/bre/security/ballerinaKeystore.p12'
+    #keyStorePassword = '$env{Keystore_Password}'
+  [kubernetes.kubernetesHpa]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #minReplicas = ''
+    #maxReplicas = ''
+    #cpuPrecentage = ''
+  [kubernetes.kubernetesSecret]
+    enable = false
+    #[[kubernetes.kubernetesSecret.secrets]]
+      #name = ''
+      #mountPath = ''
+      #readOnly = false
+      #data = ['']
+  [kubernetes.kubernetesConfigMap]
+    enable = true
+    ballerinaConf = '/Library/WSO2/APIMMicroGateway/3.0.2/conf/micro-gw.conf'
+    #[[kubernetes.kubernetesConfigMap.configMaps]]
+      #name = ''
+      #mountPath = ''
+      #data = ['']
+      #readOnly = false
+  [kubernetes.kubernetesPersistentVolumeClaim]
+    enable = false
+    #name = ''
+    #mountPath = ''
+    #readOnly = ''
+    #accessMode = ''
+    #volumeClaimSize = ''
+  [kubernetes.kubernetesJob]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #restartPolicy = ''
+    #backoffLimit = ''
+    #activeDeadlineSeconds = ''
+    #schedule = ''
+    #imagePullPolicy = ''
+    #image = ''
+    #env = ''
+    #buildImage = ''
+    #dockerHost = ''
+    #dockerCertPath = ''
+    #push = ''
+    #username = ''
+    #password = ''
+    #baseImage = ''
